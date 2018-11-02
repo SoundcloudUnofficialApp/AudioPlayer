@@ -52,6 +52,18 @@ extension AudioPlayer {
             queue = nil
         }
     }
+    
+    /// Skip to specified item.
+    ///
+    /// - Parameters items:The items to play.
+    public func skip(to item:AudioItem){
+        
+        if let realIndex = queue?.queue.index(of: item) {
+            queue?.nextPosition = realIndex
+            currentItem = queue?.nextItem()
+        }
+        
+    }
 
     /// Adds an item at the end of the queue. If queue is empty and player isn't playing, the behaviour will be similar
     /// to `play(item:)`.
