@@ -105,7 +105,7 @@ class AudioItemQueue {
         if oldMode.contains(.shuffle) && !mode.contains(.shuffle) {
             queue = items
             if let last = historic.last, let index = queue.index(of: last) {
-                nextPosition = index + 1
+                nextPosition = index
             }
         } else if mode.contains(.shuffle) && !oldMode.contains(.shuffle) {
             let alreadyPlayed = queue.prefix(upTo: nextPosition)
