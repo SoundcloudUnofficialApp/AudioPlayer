@@ -111,7 +111,7 @@ public class AudioPlayer: NSObject {
                 if #available(iOS 10.0, tvOS 10.0, OSX 10.12, *) {
                     playerItem.preferredForwardBufferDuration = self.preferredForwardBufferDuration
                 }
-
+                playerItem.audioTimePitchAlgorithm = .timeDomain
                 //Creates new player
                 player = AVPlayer(playerItem: playerItem)
                 
