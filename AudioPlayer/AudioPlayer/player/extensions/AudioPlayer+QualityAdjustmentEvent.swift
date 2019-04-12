@@ -45,7 +45,9 @@ extension AudioPlayer {
         }
 
         let cip = currentItemProgression
-        let item = AVPlayerItem(url: url)
+        let options:Dictionary<String,Any> = [AVURLAssetPreferPreciseDurationAndTimingKey : NSNumber(value: true)]
+        let urlAsset = AVURLAsset(url:url, options: options)
+        let item = AVPlayerItem(asset: urlAsset)
         self.updatePlayerItemForBufferingStrategy(item)
 
         qualityIsBeingChanged = true
