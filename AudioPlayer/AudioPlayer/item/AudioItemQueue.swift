@@ -218,7 +218,7 @@ class AudioItemQueue {
     /// - Parameter index: The index of the item to remove.
     func remove(at index: Int) {
         let item = queue.remove(at: index)
-        if let index = items.index(of: item) {
+        if let index = items.firstIndex(of: item) {
             items.remove(at: index)
             if mode.contains(.repeat), index < nextPosition {
                 nextPosition = nextPosition - 1
